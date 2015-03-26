@@ -14,6 +14,17 @@
 		00BD1F591AC3467C00FA569F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F581AC3467C00FA569F /* Images.xcassets */; };
 		00BD1F5C1AC3467C00FA569F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F5A1AC3467C00FA569F /* LaunchScreen.xib */; };
 		00BD1F681AC3467C00FA569F /* ParalaxTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD1F671AC3467C00FA569F /* ParalaxTableTests.m */; };
+		00BD1F731AC3477F00FA569F /* ParallaxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD1F721AC3477F00FA569F /* ParallaxTableViewCell.m */; };
+		00BD1F7E1AC36E0000FA569F /* IKV_6964.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F741AC36E0000FA569F /* IKV_6964.jpg */; };
+		00BD1F7F1AC36E0000FA569F /* IKV_6994.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F751AC36E0000FA569F /* IKV_6994.jpg */; };
+		00BD1F801AC36E0000FA569F /* IKV_7005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F761AC36E0000FA569F /* IKV_7005.jpg */; };
+		00BD1F811AC36E0000FA569F /* IKV_7024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F771AC36E0000FA569F /* IKV_7024.jpg */; };
+		00BD1F821AC36E0000FA569F /* IKV_7032.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F781AC36E0000FA569F /* IKV_7032.jpg */; };
+		00BD1F831AC36E0000FA569F /* IKV_7047.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F791AC36E0000FA569F /* IKV_7047.jpg */; };
+		00BD1F841AC36E0000FA569F /* IKV_7050.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F7A1AC36E0000FA569F /* IKV_7050.jpg */; };
+		00BD1F851AC36E0000FA569F /* IKV_7054.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F7B1AC36E0000FA569F /* IKV_7054.jpg */; };
+		00BD1F861AC36E0000FA569F /* IKV_7056.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F7C1AC36E0000FA569F /* IKV_7056.jpg */; };
+		00BD1F871AC36E0000FA569F /* IKV_7060.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F7D1AC36E0000FA569F /* IKV_7060.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +51,18 @@
 		00BD1F611AC3467C00FA569F /* ParalaxTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParalaxTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BD1F661AC3467C00FA569F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00BD1F671AC3467C00FA569F /* ParalaxTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParalaxTableTests.m; sourceTree = "<group>"; };
+		00BD1F711AC3477F00FA569F /* ParallaxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxTableViewCell.h; sourceTree = "<group>"; };
+		00BD1F721AC3477F00FA569F /* ParallaxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxTableViewCell.m; sourceTree = "<group>"; };
+		00BD1F741AC36E0000FA569F /* IKV_6964.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_6964.jpg; path = "../../../Desktop/Фотки/Love story/IKV_6964.jpg"; sourceTree = "<group>"; };
+		00BD1F751AC36E0000FA569F /* IKV_6994.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_6994.jpg; path = "../../../Desktop/Фотки/Love story/IKV_6994.jpg"; sourceTree = "<group>"; };
+		00BD1F761AC36E0000FA569F /* IKV_7005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7005.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7005.jpg"; sourceTree = "<group>"; };
+		00BD1F771AC36E0000FA569F /* IKV_7024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7024.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7024.jpg"; sourceTree = "<group>"; };
+		00BD1F781AC36E0000FA569F /* IKV_7032.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7032.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7032.jpg"; sourceTree = "<group>"; };
+		00BD1F791AC36E0000FA569F /* IKV_7047.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7047.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7047.jpg"; sourceTree = "<group>"; };
+		00BD1F7A1AC36E0000FA569F /* IKV_7050.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7050.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7050.jpg"; sourceTree = "<group>"; };
+		00BD1F7B1AC36E0000FA569F /* IKV_7054.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7054.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7054.jpg"; sourceTree = "<group>"; };
+		00BD1F7C1AC36E0000FA569F /* IKV_7056.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7056.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7056.jpg"; sourceTree = "<group>"; };
+		00BD1F7D1AC36E0000FA569F /* IKV_7060.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IKV_7060.jpg; path = "../../../Desktop/Фотки/Love story/IKV_7060.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +104,22 @@
 		00BD1F4A1AC3467C00FA569F /* ParalaxTable */ = {
 			isa = PBXGroup;
 			children = (
+				00BD1F741AC36E0000FA569F /* IKV_6964.jpg */,
+				00BD1F751AC36E0000FA569F /* IKV_6994.jpg */,
+				00BD1F761AC36E0000FA569F /* IKV_7005.jpg */,
+				00BD1F771AC36E0000FA569F /* IKV_7024.jpg */,
+				00BD1F781AC36E0000FA569F /* IKV_7032.jpg */,
+				00BD1F791AC36E0000FA569F /* IKV_7047.jpg */,
+				00BD1F7A1AC36E0000FA569F /* IKV_7050.jpg */,
+				00BD1F7B1AC36E0000FA569F /* IKV_7054.jpg */,
+				00BD1F7C1AC36E0000FA569F /* IKV_7056.jpg */,
+				00BD1F7D1AC36E0000FA569F /* IKV_7060.jpg */,
 				00BD1F4F1AC3467C00FA569F /* AppDelegate.h */,
 				00BD1F501AC3467C00FA569F /* AppDelegate.m */,
 				00BD1F521AC3467C00FA569F /* ViewController.h */,
 				00BD1F531AC3467C00FA569F /* ViewController.m */,
+				00BD1F711AC3477F00FA569F /* ParallaxTableViewCell.h */,
+				00BD1F721AC3477F00FA569F /* ParallaxTableViewCell.m */,
 				00BD1F551AC3467C00FA569F /* Main.storyboard */,
 				00BD1F581AC3467C00FA569F /* Images.xcassets */,
 				00BD1F5A1AC3467C00FA569F /* LaunchScreen.xib */,
@@ -199,9 +234,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BD1F841AC36E0000FA569F /* IKV_7050.jpg in Resources */,
+				00BD1F821AC36E0000FA569F /* IKV_7032.jpg in Resources */,
+				00BD1F861AC36E0000FA569F /* IKV_7056.jpg in Resources */,
+				00BD1F7F1AC36E0000FA569F /* IKV_6994.jpg in Resources */,
+				00BD1F871AC36E0000FA569F /* IKV_7060.jpg in Resources */,
 				00BD1F571AC3467C00FA569F /* Main.storyboard in Resources */,
+				00BD1F801AC36E0000FA569F /* IKV_7005.jpg in Resources */,
+				00BD1F7E1AC36E0000FA569F /* IKV_6964.jpg in Resources */,
+				00BD1F831AC36E0000FA569F /* IKV_7047.jpg in Resources */,
 				00BD1F5C1AC3467C00FA569F /* LaunchScreen.xib in Resources */,
+				00BD1F811AC36E0000FA569F /* IKV_7024.jpg in Resources */,
 				00BD1F591AC3467C00FA569F /* Images.xcassets in Resources */,
+				00BD1F851AC36E0000FA569F /* IKV_7054.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +266,7 @@
 			files = (
 				00BD1F541AC3467C00FA569F /* ViewController.m in Sources */,
 				00BD1F511AC3467C00FA569F /* AppDelegate.m in Sources */,
+				00BD1F731AC3477F00FA569F /* ParallaxTableViewCell.m in Sources */,
 				00BD1F4E1AC3467C00FA569F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
