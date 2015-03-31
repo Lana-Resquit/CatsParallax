@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -42,23 +44,15 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="pMr-4W-Uvk" secondAttribute="trailing" id="3Bh-zg-NpU"/>
                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="38Y-C3-SUg" secondAttribute="bottom" constant="40" id="6Su-c0-MYo"/>
-                                                        <constraint firstAttribute="bottom" secondItem="pMr-4W-Uvk" secondAttribute="bottom" constant="-50" id="AvD-qt-uOH"/>
-                                                        <constraint firstAttribute="trailing" secondItem="38Y-C3-SUg" secondAttribute="trailing" constant="8" id="BOH-cF-4Yf"/>
-                                                        <constraint firstItem="pMr-4W-Uvk" firstAttribute="top" secondItem="DCf-Vd-nrq" secondAttribute="top" constant="-40" id="E0u-3a-n4k"/>
-                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pMr-4W-Uvk" secondAttribute="bottom" constant="-50" id="E1q-hb-dgI"/>
-                                                        <constraint firstItem="38Y-C3-SUg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DCf-Vd-nrq" secondAttribute="leading" constant="8" id="MgP-vf-G9B"/>
-                                                        <constraint firstItem="pMr-4W-Uvk" firstAttribute="leading" secondItem="DCf-Vd-nrq" secondAttribute="leading" id="NMa-Ql-bvU"/>
+                                                        <constraint firstItem="pMr-4W-Uvk" firstAttribute="centerX" secondItem="38Y-C3-SUg" secondAttribute="centerX" id="Jad-Q6-ms2"/>
                                                         <constraint firstAttribute="bottom" secondItem="38Y-C3-SUg" secondAttribute="bottom" constant="7" id="PZr-CQ-XR0"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="38Y-C3-SUg" secondAttribute="trailing" constant="8" id="UVX-yt-75V"/>
-                                                        <constraint firstAttribute="trailing" secondItem="pMr-4W-Uvk" secondAttribute="trailing" id="Wcp-kB-hvA"/>
-                                                        <constraint firstAttribute="trailing" secondItem="pMr-4W-Uvk" secondAttribute="trailing" id="XSa-aj-755"/>
-                                                        <constraint firstItem="38Y-C3-SUg" firstAttribute="leading" secondItem="DCf-Vd-nrq" secondAttribute="leading" constant="8" id="Xii-1F-uer"/>
-                                                        <constraint firstItem="38Y-C3-SUg" firstAttribute="top" secondItem="DCf-Vd-nrq" secondAttribute="top" constant="82" id="eJo-zL-RMs"/>
-                                                        <constraint firstItem="38Y-C3-SUg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DCf-Vd-nrq" secondAttribute="top" constant="49" id="nY7-zs-RMy"/>
-                                                        <constraint firstItem="pMr-4W-Uvk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DCf-Vd-nrq" secondAttribute="top" constant="-40" id="pOL-uj-zsY"/>
-                                                        <constraint firstItem="pMr-4W-Uvk" firstAttribute="leading" secondItem="DCf-Vd-nrq" secondAttribute="leading" id="yYl-NW-v6n"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pMr-4W-Uvk" secondAttribute="trailing" id="W7I-y4-br5"/>
+                                                        <constraint firstItem="38Y-C3-SUg" firstAttribute="leading" secondItem="DCf-Vd-nrq" secondAttribute="leadingMargin" id="Xxy-Xh-pDZ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pMr-4W-Uvk" secondAttribute="bottom" constant="-50" id="gSb-Is-VhZ"/>
+                                                        <constraint firstItem="38Y-C3-SUg" firstAttribute="top" secondItem="DCf-Vd-nrq" secondAttribute="top" constant="82" id="kOu-XT-fsT"/>
+                                                        <constraint firstItem="pMr-4W-Uvk" firstAttribute="leading" secondItem="DCf-Vd-nrq" secondAttribute="leading" id="tgh-lE-DtL"/>
+                                                        <constraint firstItem="pMr-4W-Uvk" firstAttribute="top" secondItem="DCf-Vd-nrq" secondAttribute="top" constant="-40" id="vuy-7J-8hn"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="subviews">
@@ -67,22 +61,14 @@
                                                         </mask>
                                                         <mask key="constraints">
                                                             <exclude reference="6Su-c0-MYo"/>
-                                                            <exclude reference="BOH-cF-4Yf"/>
-                                                            <exclude reference="MgP-vf-G9B"/>
                                                             <exclude reference="PZr-CQ-XR0"/>
-                                                            <exclude reference="UVX-yt-75V"/>
-                                                            <exclude reference="Xii-1F-uer"/>
-                                                            <exclude reference="eJo-zL-RMs"/>
-                                                            <exclude reference="nY7-zs-RMy"/>
-                                                            <exclude reference="3Bh-zg-NpU"/>
-                                                            <exclude reference="AvD-qt-uOH"/>
-                                                            <exclude reference="E0u-3a-n4k"/>
-                                                            <exclude reference="E1q-hb-dgI"/>
-                                                            <exclude reference="NMa-Ql-bvU"/>
-                                                            <exclude reference="Wcp-kB-hvA"/>
-                                                            <exclude reference="XSa-aj-755"/>
-                                                            <exclude reference="pOL-uj-zsY"/>
-                                                            <exclude reference="yYl-NW-v6n"/>
+                                                            <exclude reference="Xxy-Xh-pDZ"/>
+                                                            <exclude reference="kOu-XT-fsT"/>
+                                                            <exclude reference="Jad-Q6-ms2"/>
+                                                            <exclude reference="W7I-y4-br5"/>
+                                                            <exclude reference="gSb-Is-VhZ"/>
+                                                            <exclude reference="tgh-lE-DtL"/>
+                                                            <exclude reference="vuy-7J-8hn"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
@@ -92,42 +78,34 @@
                                                         </mask>
                                                         <mask key="constraints">
                                                             <exclude reference="6Su-c0-MYo"/>
-                                                            <include reference="BOH-cF-4Yf"/>
-                                                            <include reference="MgP-vf-G9B"/>
                                                             <exclude reference="PZr-CQ-XR0"/>
-                                                            <include reference="UVX-yt-75V"/>
-                                                            <include reference="Xii-1F-uer"/>
-                                                            <include reference="eJo-zL-RMs"/>
-                                                            <include reference="nY7-zs-RMy"/>
-                                                            <include reference="3Bh-zg-NpU"/>
-                                                            <include reference="AvD-qt-uOH"/>
-                                                            <include reference="E0u-3a-n4k"/>
-                                                            <include reference="E1q-hb-dgI"/>
-                                                            <include reference="NMa-Ql-bvU"/>
-                                                            <include reference="Wcp-kB-hvA"/>
-                                                            <include reference="XSa-aj-755"/>
-                                                            <include reference="pOL-uj-zsY"/>
-                                                            <include reference="yYl-NW-v6n"/>
+                                                            <include reference="Xxy-Xh-pDZ"/>
+                                                            <include reference="kOu-XT-fsT"/>
+                                                            <include reference="Jad-Q6-ms2"/>
+                                                            <include reference="W7I-y4-br5"/>
+                                                            <include reference="gSb-Is-VhZ"/>
+                                                            <include reference="tgh-lE-DtL"/>
+                                                            <include reference="vuy-7J-8hn"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="DCf-Vd-nrq" secondAttribute="trailing" id="6ya-ib-U5d"/>
-                                                <constraint firstAttribute="bottom" secondItem="DCf-Vd-nrq" secondAttribute="bottom" constant="9" id="JWP-wV-FZl"/>
-                                                <constraint firstItem="DCf-Vd-nrq" firstAttribute="top" secondItem="PaB-Hb-Din" secondAttribute="top" id="Nfz-nf-a6q"/>
-                                                <constraint firstItem="DCf-Vd-nrq" firstAttribute="leading" secondItem="PaB-Hb-Din" secondAttribute="leading" id="ncx-mc-c06"/>
+                                                <constraint firstAttribute="trailing" secondItem="DCf-Vd-nrq" secondAttribute="trailing" id="1EV-3H-Bhq"/>
+                                                <constraint firstItem="DCf-Vd-nrq" firstAttribute="leading" secondItem="PaB-Hb-Din" secondAttribute="leading" id="3PR-2a-0pc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="DCf-Vd-nrq" secondAttribute="bottom" constant="1" id="ffp-Uq-XLf"/>
+                                                <constraint firstItem="DCf-Vd-nrq" firstAttribute="top" secondItem="PaB-Hb-Din" secondAttribute="top" id="qTR-WP-daN"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="DCf-Vd-nrq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="6ya-ib-U5d"/>
-                                                    <exclude reference="JWP-wV-FZl"/>
-                                                    <exclude reference="Nfz-nf-a6q"/>
-                                                    <exclude reference="ncx-mc-c06"/>
+                                                    <exclude reference="1EV-3H-Bhq"/>
+                                                    <exclude reference="3PR-2a-0pc"/>
+                                                    <exclude reference="ffp-Uq-XLf"/>
+                                                    <exclude reference="qTR-WP-daN"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -135,10 +113,10 @@
                                                     <include reference="DCf-Vd-nrq"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="6ya-ib-U5d"/>
-                                                    <include reference="JWP-wV-FZl"/>
-                                                    <include reference="Nfz-nf-a6q"/>
-                                                    <include reference="ncx-mc-c06"/>
+                                                    <include reference="1EV-3H-Bhq"/>
+                                                    <include reference="3PR-2a-0pc"/>
+                                                    <include reference="ffp-Uq-XLf"/>
+                                                    <include reference="qTR-WP-daN"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

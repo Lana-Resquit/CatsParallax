@@ -30,6 +30,7 @@
     CGRect imageRect = self.parallaxImage.frame;
     imageRect.origin.y = -(difference/2)+move;
     self.parallaxImage.frame = imageRect;
+
     
 }
 

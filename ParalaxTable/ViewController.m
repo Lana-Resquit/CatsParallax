@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ParallaxTableViewCell.h"
+#import "UIImage.h"
 
 @interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -25,16 +26,15 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableItems = @[[UIImage imageNamed:@"IKV_6994.jpg" ],
-                        [UIImage imageNamed:@"IKV_7005.jpg" ],
-                        [UIImage imageNamed:@"IKV_6964.jpg" ],
-                        [UIImage imageNamed:@"IKV_7032.jpg" ],
-                        [UIImage imageNamed:@"IKV_7047.jpg" ],
-                        [UIImage imageNamed:@"IKV_7050.jpg" ],
-                        [UIImage imageNamed:@"IKV_7056.jpg" ],
-                        [UIImage imageNamed:@"IKV_7054.jpg" ],
-                        [UIImage imageNamed:@"IKV_7024.jpg" ]];
-    
+    self.tableItems = @[[UIImage imageNamed:@"test1.jpeg"],
+                        [UIImage imageNamed:@"test2.jpg"],
+                        [UIImage imageNamed:@"test3.jpg"],
+                        [UIImage imageNamed:@"test4.jpg"],
+                        [UIImage imageNamed:@"test5.jpg"],
+                        [UIImage imageNamed:@"test6.jpg"],
+                        [UIImage imageNamed:@"test7.jpg"],
+                        [UIImage imageNamed:@"test8.jpg"],
+                        [UIImage imageNamed:@"test9.jpg"]];
     
     
     self.tableLabels = @[@"Калла",
@@ -69,13 +69,14 @@
     
     
     cell.parallaxLabel.text = [self.tableLabels objectAtIndex:indexPath.row];
-    cell.parallaxImage.image = [self.tableItems objectAtIndex:indexPath.row];
-    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.parallaxImage.image.size.width, cell.parallaxImage.image.size.height / 2)];
-    [overlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
-    if (cell.parallaxImage.subviews.count == 0) [cell.parallaxImage addSubview:overlay];
     
+    UIImage *blackImage = [UIImage ipMaskedImageNamed:[self.tableItems objectAtIndex:indexPath.row] color:[UIColor blackColor]];
+    
+    cell.parallaxImage.image = blackImage;
+
     return cell;
 }
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSArray *visibleCells = [self.tableView visibleCells];
