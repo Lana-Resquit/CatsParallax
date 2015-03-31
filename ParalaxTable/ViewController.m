@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *tableItems;
+@property (nonatomic,strong) NSArray *tableLabels;
 
 @end
 
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -32,11 +34,26 @@
                         [UIImage imageNamed:@"IKV_7056.jpg" ],
                         [UIImage imageNamed:@"IKV_7054.jpg" ],
                         [UIImage imageNamed:@"IKV_7024.jpg" ]];
+    
+    
+    
+    self.tableLabels = @[@"Калла",
+                         @"Роза",
+                         @"Орхидея",
+                         @"Ромашка",
+                         @"Пион",
+                         @"Хризантема",
+                         @"Гербера",
+                         @"Тюльпан",
+                         @"Подснежник"];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     
     [self scrollViewDidScroll:nil];
+    
+    
+    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -49,8 +66,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ParallaxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParallaxCell"];
-    cell.parallaxLabel.text = [NSString stringWithFormat:@"Number %li",indexPath.row];
+    
+    
+    cell.parallaxLabel.text = [self.tableLabels objectAtIndex:indexPath.row];
     cell.parallaxImage.image = [self.tableItems objectAtIndex:indexPath.row];
+    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.parallaxImage.image.size.width, cell.parallaxImage.image.size.height / 2)];
+    [overlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
+    if (cell.parallaxImage.subviews.count == 0) [cell.parallaxImage addSubview:overlay];
+    
     return cell;
 }
 
