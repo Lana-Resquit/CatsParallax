@@ -26,7 +26,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableItems = @[[UIImage imageNamed:@"test1.jpeg"],
+    self.tableItems = @[[UIImage imageNamed:@"test1.jpg"],
                         [UIImage imageNamed:@"test2.jpg"],
                         [UIImage imageNamed:@"test3.jpg"],
                         [UIImage imageNamed:@"test4.jpg"],

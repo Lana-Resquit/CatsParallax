@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00B932DB1ACB05FC00A57903 /* test1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 00B932D21ACB05FC00A57903 /* test1.jpeg */; };
 		00B932DC1ACB05FC00A57903 /* test2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00B932D31ACB05FC00A57903 /* test2.jpg */; };
 		00B932DD1ACB05FC00A57903 /* test3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00B932D41ACB05FC00A57903 /* test3.jpg */; };
 		00B932DE1ACB05FC00A57903 /* test4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00B932D51ACB05FC00A57903 /* test4.jpg */; };
@@ -17,6 +16,7 @@
 		00B932E21ACB05FC00A57903 /* test8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00B932D91ACB05FC00A57903 /* test8.jpg */; };
 		00B932E31ACB05FC00A57903 /* test9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00B932DA1ACB05FC00A57903 /* test9.jpg */; };
 		00B932E61ACB141E00A57903 /* UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B932E51ACB141E00A57903 /* UIImage.m */; };
+		00B932E81ACB347300A57903 /* test1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00B932E71ACB347300A57903 /* test1.jpg */; };
 		00BD1F4E1AC3467C00FA569F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD1F4D1AC3467C00FA569F /* main.m */; };
 		00BD1F511AC3467C00FA569F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD1F501AC3467C00FA569F /* AppDelegate.m */; };
 		00BD1F541AC3467C00FA569F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD1F531AC3467C00FA569F /* ViewController.m */; };
@@ -38,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00B932D21ACB05FC00A57903 /* test1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test1.jpeg; path = "../../../Desktop/Фотки/For test/test1.jpeg"; sourceTree = "<group>"; };
 		00B932D31ACB05FC00A57903 /* test2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test2.jpg; path = "../../../Desktop/Фотки/For test/test2.jpg"; sourceTree = "<group>"; };
 		00B932D41ACB05FC00A57903 /* test3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test3.jpg; path = "../../../Desktop/Фотки/For test/test3.jpg"; sourceTree = "<group>"; };
 		00B932D51ACB05FC00A57903 /* test4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test4.jpg; path = "../../../Desktop/Фотки/For test/test4.jpg"; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		00B932DA1ACB05FC00A57903 /* test9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test9.jpg; path = "../../../Desktop/Фотки/For test/test9.jpg"; sourceTree = "<group>"; };
 		00B932E41ACB141E00A57903 /* UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage.h; sourceTree = "<group>"; };
 		00B932E51ACB141E00A57903 /* UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage.m; sourceTree = "<group>"; };
+		00B932E71ACB347300A57903 /* test1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test1.jpg; path = "../../../Desktop/Фотки/For test/test1.jpg"; sourceTree = "<group>"; };
 		00BD1F481AC3467C00FA569F /* ParalaxTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParalaxTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BD1F4C1AC3467C00FA569F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00BD1F4D1AC3467C00FA569F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		00BD1F4A1AC3467C00FA569F /* ParalaxTable */ = {
 			isa = PBXGroup;
 			children = (
-				00B932D21ACB05FC00A57903 /* test1.jpeg */,
+				00B932E71ACB347300A57903 /* test1.jpg */,
 				00B932D31ACB05FC00A57903 /* test2.jpg */,
 				00B932D41ACB05FC00A57903 /* test3.jpg */,
 				00B932D51ACB05FC00A57903 /* test4.jpg */,
@@ -244,8 +244,8 @@
 				00B932E31ACB05FC00A57903 /* test9.jpg in Resources */,
 				00BD1F591AC3467C00FA569F /* Images.xcassets in Resources */,
 				00B932DF1ACB05FC00A57903 /* test5.jpg in Resources */,
-				00B932DB1ACB05FC00A57903 /* test1.jpeg in Resources */,
 				00B932E21ACB05FC00A57903 /* test8.jpg in Resources */,
+				00B932E81ACB347300A57903 /* test1.jpg in Resources */,
 				00B932DD1ACB05FC00A57903 /* test3.jpg in Resources */,
 				00B932E01ACB05FC00A57903 /* test6.jpg in Resources */,
 			);

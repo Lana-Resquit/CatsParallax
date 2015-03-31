@@ -21,7 +21,7 @@
     [image drawInRect:rect];
     CGContextSetFillColorWithColor(c, [color CGColor]);
     
-    CGContextSetAlpha(c, 0.5);
+    CGContextSetAlpha(c, 0.4);
     
     CGContextSetBlendMode(c, kCGBlendModeSourceAtop);
     CGContextFillRect(c, rect);
