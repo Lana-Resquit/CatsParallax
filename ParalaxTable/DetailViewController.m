@@ -65,7 +65,7 @@
         // create image
         UIImage *image = [self.detailPhotos objectAtIndex:i];
         // create imageView
-        UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake((i-1)*scrMain.frame.size.width, 0, scrMain.frame.size.width, scrMain.frame.size.height)];
+        UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake((i)*scrMain.frame.size.width, 0, scrMain.frame.size.width, scrMain.frame.size.height)];
         // set scale to fill
         imgV.contentMode=UIViewContentModeScaleToFill;
         // set image
