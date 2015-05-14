@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "Places.h"
 
-@interface DetailViewController : UIViewController
-
+@interface DetailViewController : UIViewController 
 @property (strong, nonatomic) Places *detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailSummary;
-@property (weak, nonatomic) IBOutlet UINavigationBar *detailTitle;
-@property (weak, nonatomic) IBOutlet UIScrollView *viewForGallery;
+
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollViewForGallery;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageForGallery;
+
 
 
 @end

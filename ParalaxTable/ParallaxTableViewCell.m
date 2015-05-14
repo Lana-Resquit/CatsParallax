@@ -12,8 +12,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self.indicatorView setImage:[UIImage imageNamed:@"disclosureIndicator.png"]];
-    
     
 }
 
