@@ -14,7 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *parallaxImage;
 @property (weak, nonatomic) IBOutlet UILabel *parallaxSummary;
 @property (weak, nonatomic) IBOutlet UIView *parallaxView;
-@property (weak, nonatomic) IBOutlet UIButton *seeMoreButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *indicatorView;
 
 -(void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view;
 

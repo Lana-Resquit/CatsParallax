@@ -9,13 +9,17 @@
 #import "ViewController.h"
 #import "ParallaxTableViewCell.h"
 #import "UIImage.h"
+#import "Places.h"
+#import "PlacesDataController.h"
+#import "DetailViewController.h"
 
 @interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *tableItems;
-@property (nonatomic,strong) NSArray *tableLabels;
-@property (nonatomic,strong) NSArray *tableSummary;
+@property (nonatomic, strong) PlacesDataController *placesDataController;
+//@property (nonatomic, strong) NSArray *tableItems;
+//@property (nonatomic,strong) NSArray *tableLabels;
+//@property (nonatomic,strong) NSArray *tableSummary;
 
 @end
 
@@ -29,44 +33,48 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableItems = @[[UIImage imageNamed:@"test1.jpg"],
-                        [UIImage imageNamed:@"test2.jpg"],
-                        [UIImage imageNamed:@"test3.jpg"],
-                        [UIImage imageNamed:@"test4.jpg"],
-                        [UIImage imageNamed:@"test5.jpg"],
-                        [UIImage imageNamed:@"test6.jpg"],
-                        [UIImage imageNamed:@"test7.jpg"],
-                        [UIImage imageNamed:@"test8.jpg"],
-                        [UIImage imageNamed:@"test9.jpg"]];
+    self.placesDataController = [[PlacesDataController alloc]init];
     
+//    self.tableItems = @[[UIImage imageNamed:@"test1.jpg"],
+//                        [UIImage imageNamed:@"test2.jpg"],
+//                        [UIImage imageNamed:@"test3.jpg"],
+//                        [UIImage imageNamed:@"test4.jpg"],
+//                        [UIImage imageNamed:@"test5.jpg"],
+//                        [UIImage imageNamed:@"test6.jpg"],
+//                        [UIImage imageNamed:@"test7.jpg"],
+//                        [UIImage imageNamed:@"test8.jpg"],
+//                        [UIImage imageNamed:@"test9.jpg"]];
     
-    self.tableLabels = @[@"Калла",
-                         @"Роза",
-                         @"Орхидея",
-                         @"Ромашка",
-                         @"Пион",
-                         @"Хризантема",
-                         @"Гербера",
-                         @"Тюльпан",
-                         @"Подснежник"];
-    
-    self.tableSummary = @[@"Цветок калла очень популярен при создании свадебных букетов из-за своего величия и красоты. Являются одним из самых красивых цветов с уникальной формой цветка; имеют широкий спектр цвета: оттенки зеленого, розового, фиолетового, желтого и оранжевого (см. — все каллы). Известны также другие распространенные имена, такие как аронники, трубчатые, свиные и мини-каллы.",
-                          @"Этот цветок имеет волшебную притягательность и необыкновенную красоту, которая испокон веков привлекала к себе огромное внимание людей. Многие из них сочинили большое количество сказок и легенд о прекрасной розе, так как она пользовалась большой популярностью и любовью у всех народов мира. ",
-                          @"Орхидеи похожи на произведения искусства, радуют и обогащают нас своей красотой. И формы этих цветов самые изысканные. Они напоминают то птиц, то бабочек, то ящериц, то лебедей. Тонкие ароматы этих цветов кружат голову. Пожалуй, орхидеи - одно из самых совершенных творений природы, и недаром многие называют их аристократами среди растений.",
-                          @"Собирать ромашку следует только в сухую погоду, в ранние утренние часы, когда в клетках всех растений активизируются процессы фотосинтеза и происходит повышенная выработка витаминов и других полезных веществ. В случае выпадения обильной утренней росы сбор ромашки производить не следует – лучше выбрать для этого сухое и теплое утро.",
-                          @"Пион относится к классу многолетних растений и может быть травянистым, полукустарниковым либо кустарниковым. Данное растение может иметь несколько стеблей, высота которых редко превышает отметку в 1 м.",
-                          @"По описанию - на букетные хризантемы, множество соцветий похожи на плотные шаровидные шапки незагнутых цветков. Самые поздние из всех моих хризантем и самые капризные. Цветение начинается только в конце сентября - начале октября, самый пик цветения - конец октября.",
-                          @"Многолетнее красивоцветущее травянистое растение семейства сложноцветных или астровых (Asteraceae). В открытом грунте произрастает только в районах с очень теплым климатом, поэтому используется в первую очередь как оранжерейная (на срезку) или комнатная культура.",
-                          @"Значение цветка варьируется и от цвета, так красные тюльпаны могут символизировать объяснение в любви (поверь мне), в то время как белые олицетворяют признание вины и желание получить прощение. Многоцветные же  тюльпаны сообщают девушке о том, что у нее прекрасные глаза. Также тюльпан может означать собой богатство и свидетельствовать о любви и взаимности чувств!",
-                          @"Подснежник — многолетне луковичное растение. Луковица округлая, до 3 см в диаметре. Листья немногочисленные, узкие, плоские, линейные или ланцетные, блестящие темно-зеленого или серовато-зеленого цвета, шириной 1 см. Из луковицы вырастает одиночный цветок на прямой цветоножке. Листья появляются одновременно с цветками. Цветки поникающие, колокольчатой формы, белые с зелеными пятнышками на краю лепестка."];
+//    
+//    self.tableLabels = @[@"Калла",
+//                         @"Роза",
+//                         @"Орхидея",
+//                         @"Ромашка",
+//                         @"Пион",
+//                         @"Хризантема",
+//                         @"Гербера",
+//                         @"Тюльпан",
+//                         @"Подснежник"];
+//    
+//    self.tableSummary = @[@"Цветок калла очень популярен при создании свадебных букетов из-за своего величия и красоты. Являются одним из самых красивых цветов с уникальной формой цветка; имеют широкий спектр цвета: оттенки зеленого, розового, фиолетового, желтого и оранжевого (см. — все каллы). Известны также другие распространенные имена, такие как аронники, трубчатые, свиные и мини-каллы.",
+//                          @"Этот цветок имеет волшебную притягательность и необыкновенную красоту, которая испокон веков привлекала к себе огромное внимание людей. Многие из них сочинили большое количество сказок и легенд о прекрасной розе, так как она пользовалась большой популярностью и любовью у всех народов мира. ",
+//                          @"Орхидеи похожи на произведения искусства, радуют и обогащают нас своей красотой. И формы этих цветов самые изысканные. Они напоминают то птиц, то бабочек, то ящериц, то лебедей. Тонкие ароматы этих цветов кружат голову. Пожалуй, орхидеи - одно из самых совершенных творений природы, и недаром многие называют их аристократами среди растений.",
+//                          @"Собирать ромашку следует только в сухую погоду, в ранние утренние часы, когда в клетках всех растений активизируются процессы фотосинтеза и происходит повышенная выработка витаминов и других полезных веществ. В случае выпадения обильной утренней росы сбор ромашки производить не следует – лучше выбрать для этого сухое и теплое утро.",
+//                          @"Пион относится к классу многолетних растений и может быть травянистым, полукустарниковым либо кустарниковым. Данное растение может иметь несколько стеблей, высота которых редко превышает отметку в 1 м.",
+//                          @"По описанию - на букетные хризантемы, множество соцветий похожи на плотные шаровидные шапки незагнутых цветков. Самые поздние из всех моих хризантем и самые капризные. Цветение начинается только в конце сентября - начале октября, самый пик цветения - конец октября.",
+//                          @"Многолетнее красивоцветущее травянистое растение семейства сложноцветных или астровых (Asteraceae). В открытом грунте произрастает только в районах с очень теплым климатом, поэтому используется в первую очередь как оранжерейная (на срезку) или комнатная культура.",
+//                          @"Значение цветка варьируется и от цвета, так красные тюльпаны могут символизировать объяснение в любви (поверь мне), в то время как белые олицетворяют признание вины и желание получить прощение. Многоцветные же  тюльпаны сообщают девушке о том, что у нее прекрасные глаза. Также тюльпан может означать собой богатство и свидетельствовать о любви и взаимности чувств!",
+//                          @"Подснежник — многолетне луковичное растение. Луковица округлая, до 3 см в диаметре. Листья немногочисленные, узкие, плоские, линейные или ланцетные, блестящие темно-зеленого или серовато-зеленого цвета, шириной 1 см. Из луковицы вырастает одиночный цветок на прямой цветоножке. Листья появляются одновременно с цветками. Цветки поникающие, колокольчатой формы, белые с зелеными пятнышками на краю лепестка."];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     
     [self scrollViewDidScroll:nil];
     
-    
-    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"лист А4_красивый лист_для печати_2.jpg"] forBarMetrics:UIBarMetricsDefault];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -74,17 +82,18 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.tableItems.count;
+    return [self.placesDataController placesCount];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ParallaxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParallaxCell"];
+    Places *place = [self.placesDataController placeAtIndex:indexPath.row];
     
     
-    cell.parallaxLabel.text = [self.tableLabels objectAtIndex:indexPath.row];
-    cell.parallaxSummary.text = [self.tableSummary objectAtIndex:indexPath.row];
+    cell.parallaxLabel.text = place.title;
+    cell.parallaxSummary.text = place.summary;
     
-    UIImage *blackImage = [UIImage ipMaskedImageNamed:[self.tableItems objectAtIndex:indexPath.row] color:[UIColor blackColor]];
+    UIImage *blackImage = [UIImage ipMaskedImageNamed:place.photo color:[UIColor blackColor]];
     
     cell.parallaxImage.image = blackImage;
 
@@ -101,6 +110,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ShowDetails"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Places *place =[self.placesDataController placeAtIndex:indexPath.row];
+        [[segue destinationViewController]setDetailItem:place];
+        
+    }
 }
 
 @end
