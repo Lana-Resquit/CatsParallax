@@ -7,11 +7,15 @@
 //
 
 #import "DetailViewController.h"
-#import "KASlideShow.h"
+#import "DetailGalleryCellCollectionViewCell.h"
+#import "DetailPlaceDataController.h"
+#import "Photo.h"
 
 @interface DetailViewController ()
 
 @property (nonatomic,strong) NSArray *detailPhotos;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) DetailPlaceDataController *detailPlaceDataController;
 
 
 @end
@@ -38,116 +42,52 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [self configureView];
     
-    self.detailPhotos = @[[UIImage imageNamed:@"test1.jpg"],
-                          [UIImage imageNamed:@"test2.jpg"],
-                          [UIImage imageNamed:@"test3.jpg"],
-                          [UIImage imageNamed:@"test4.jpg"],
-                          [UIImage imageNamed:@"test5.jpg"],
-                          [UIImage imageNamed:@"test6.jpg"],
-                          [UIImage imageNamed:@"test7.jpg"],
-                          [UIImage imageNamed:@"test8.jpg"],
-                          [UIImage imageNamed:@"test9.jpg"]];
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.detailPlaceDataController = [[DetailPlaceDataController alloc]init];
+    
+    [self setupCollectionView];
    
-   // UIScrollView *scrl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.width/2)];
-    [self.scrollViewForGallery setFrame:CGRectMake(0, 64, 400, 150)];
-    self.scrollViewForGallery.tag = 1;
-    self.scrollViewForGallery.autoresizingMask=UIViewAutoresizingNone;
-    [self.view addSubview:self.scrollViewForGallery];
-    [self setupScrollView:self.scrollViewForGallery];
-    
 }
 
-- (void)setupScrollView:(UIScrollView*)scrMain {
-    // we have 10 images here.
-    // we will add all images into a scrollView & set the appropriate size.
+-(void)setupCollectionView {
+    [self.collectionView registerClass:[DetailGalleryCellCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     
-    for (int i=0; i<self.detailPhotos.count; i++) {
-        // create image
-//        UIImage *image = [self.detailPhotos objectAtIndex:i];
-        // create imageView
-        UIImageView *imageForGallery = [[UIImageView alloc] initWithFrame:CGRectMake((i)*scrMain.frame.size.width, 0, scrMain.frame.size.width, scrMain.frame.size.height )];
-        // set scale to fill
-        
-        imageForGallery.contentMode=UIViewContentModeScaleToFill;
-        // set image
-        imageForGallery.image = [self.detailPhotos objectAtIndex:i];
-        // apply tag to access in future
-        imageForGallery.tag=i;
-        // add to scrollView
-        [scrMain addSubview:imageForGallery];
-    }
-    // set the content size to 10 image width
-    [scrMain setContentSize:CGSizeMake(scrMain.frame.size.width*self.detailPhotos.count, scrMain.frame.size.height)];
-    // enable timer after each 2 seconds for scrolling.
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [flowLayout setMinimumInteritemSpacing:0.0f];
+    [flowLayout setMinimumLineSpacing:0.0f];
+    [self.collectionView setPagingEnabled:YES];
+    [self.collectionView setCollectionViewLayout:flowLayout];
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.detailPlaceDataController photosCount];
+}
 
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    DetailGalleryCellCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     
-//    self.scrollViewForGallery.tag = 1;
-//    self.scrollViewForGallery.autoresizingMask=UIViewAutoresizingNone;
-//    
-//    [self.view addSubview:self.viewForGallery];
-//    
-//    [self.viewForGallery addSubview:self.scrollViewForGallery];
-//    
-//    [self setupScrollView:self.scrollViewForGallery];
-//    
-//    [self.pgControl setTag:12];
-//    self.pgControl.numberOfPages=10;
-//    self.pgControl.autoresizingMask=UIViewAutoresizingNone;
-//    [self.viewForGallery addSubview:self.pgControl];
-//}
-//
-//
-//
-//- (void)setupScrollView:(UIScrollView*)scrMain {
-//    // we have 10 images here.
-//    // we will add all images into a scrollView & set the appropriate size.
-//    
-//    for (int i=0; i<=self.detailPhotos.count; i++) {
-//        // create image
-//        
-//        
-//        self.imageForGallery.image = [UIImage imageNamed:[NSString stringWithFormat:@"test1.jpg"]];
-//    
-//        // apply tag to access in future
-//        self.imageForGallery.tag=i+1;
-//        // add to scrollView
-//        [scrMain addSubview:self.imageForGallery];
-//    }
-//    // set the content size to 10 image width
-//    [scrMain setContentSize:CGSizeMake(scrMain.frame.size.width * self.detailPhotos.count, scrMain.frame.size.height)];
-//    // enable timer after each 2 seconds for scrolling.
-//    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(scrollingTimer) userInfo:nil repeats:YES];
-//}
-//
-//
-//
-//- (void)scrollingTimer {
-//    // access the scroll view with the tag
-//    UIScrollView *scrMain = (UIScrollView*) [self.view viewWithTag:1];
-//    // same way, access pagecontroll access
-//    UIPageControl *pgCtr = (UIPageControl*) [self.view viewWithTag:12];
-//    // get the current offset ( which page is being displayed )
-//    CGFloat contentOffset = scrMain.contentOffset.x;
-//    // calculate next page to display
-//    int nextPage = (int)(contentOffset/scrMain.frame.size.width) + 1 ;
-//    // if page is not 10, display it
-//    if( nextPage!=9 )  {
-//        [scrMain scrollRectToVisible:CGRectMake(nextPage*scrMain.frame.size.width, 0, scrMain.frame.size.width, scrMain.frame.size.height) animated:YES];
-//        pgCtr.currentPage=nextPage;
-//        // else start sliding form 1 :)
-//    } else {
-//        [scrMain scrollRectToVisible:CGRectMake(0, 0, scrMain.frame.size.width, scrMain.frame.size.height) animated:YES];
-//        pgCtr.currentPage=0;
-//    }
-//}
+    Photo *gallery = [self.detailPlaceDataController photoAtIndex:indexPath.row];
+    
+    cell.imageView.image = gallery.photo;
+    
+    NSLog(@"%@", gallery.photo);
+    
+    
+    
+    return cell;
+}
 
-
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return self.collectionView.frame.size;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

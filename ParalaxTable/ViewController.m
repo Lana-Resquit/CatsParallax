@@ -62,6 +62,7 @@
     UIImage *blackImage = [UIImage ipMaskedImageNamed:place.photo color:[UIColor blackColor]];
     
     cell.parallaxImage.image = blackImage;
+   
 
     return cell;
 }
