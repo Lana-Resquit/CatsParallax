@@ -28,7 +28,9 @@
     if (self.detailItem) {
         
         self.detailSummary.text = self.detailItem.summary;
+        self.navItem.title = self.detailItem.title;
         
+    
         
     }
 }
@@ -48,12 +50,13 @@
                           [UIImage imageNamed:@"test7.jpg"],
                           [UIImage imageNamed:@"test8.jpg"],
                           [UIImage imageNamed:@"test9.jpg"]];
-    
-    UIScrollView *scr=[[UIScrollView alloc] initWithFrame:CGRectMake(0,64, 400, 200)];
-    scr.tag = 1;
-    scr.autoresizingMask=UIViewAutoresizingNone;
-    [self.view addSubview:scr];
-    [self setupScrollView:scr];
+   
+   // UIScrollView *scrl = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.width/2)];
+    [self.scrollViewForGallery setFrame:CGRectMake(0, 64, 400, 150)];
+    self.scrollViewForGallery.tag = 1;
+    self.scrollViewForGallery.autoresizingMask=UIViewAutoresizingNone;
+    [self.view addSubview:self.scrollViewForGallery];
+    [self setupScrollView:self.scrollViewForGallery];
     
 }
 
@@ -63,20 +66,21 @@
     
     for (int i=0; i<self.detailPhotos.count; i++) {
         // create image
-        UIImage *image = [self.detailPhotos objectAtIndex:i];
+//        UIImage *image = [self.detailPhotos objectAtIndex:i];
         // create imageView
-        UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake((i)*scrMain.frame.size.width, 0, scrMain.frame.size.width, scrMain.frame.size.height)];
+        UIImageView *imageForGallery = [[UIImageView alloc] initWithFrame:CGRectMake((i)*scrMain.frame.size.width, 0, scrMain.frame.size.width, scrMain.frame.size.height )];
         // set scale to fill
-        imgV.contentMode=UIViewContentModeScaleToFill;
+        
+        imageForGallery.contentMode=UIViewContentModeScaleToFill;
         // set image
-        [imgV setImage:image];
+        imageForGallery.image = [self.detailPhotos objectAtIndex:i];
         // apply tag to access in future
-        imgV.tag=i+1;
+        imageForGallery.tag=i;
         // add to scrollView
-        [scrMain addSubview:imgV];
+        [scrMain addSubview:imageForGallery];
     }
     // set the content size to 10 image width
-    [scrMain setContentSize:CGSizeMake(scrMain.frame.size.width*10, scrMain.frame.size.height)];
+    [scrMain setContentSize:CGSizeMake(scrMain.frame.size.width*self.detailPhotos.count, scrMain.frame.size.height)];
     // enable timer after each 2 seconds for scrolling.
 }
 

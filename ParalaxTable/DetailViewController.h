@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollViewForGallery;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageForGallery;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 
 
