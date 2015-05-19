@@ -13,7 +13,6 @@
 
 @interface DetailViewController ()
 
-@property (nonatomic,strong) NSArray *detailPhotos;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) DetailPlaceDataController *detailPlaceDataController;
 
@@ -44,19 +43,23 @@
     
     [self configureView];
     
+    
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.detailPlaceDataController = [[DetailPlaceDataController alloc]init];
+    [self.collectionView reloadData];
     
     [self setupCollectionView];
    
 }
 
 -(void)setupCollectionView {
-    [self.collectionView registerClass:[DetailGalleryCellCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    
+   // [self.collectionView registerClass:[DetailGalleryCellCollectionViewCell class] forCellWithReuseIdentifier:@"slideGalleryCell"];
+//    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+//    [flowLayout setItemSize:CGSizeMake(400, 175)];
     [flowLayout setMinimumInteritemSpacing:0.0f];
     [flowLayout setMinimumLineSpacing:0.0f];
     [self.collectionView setPagingEnabled:YES];
@@ -72,13 +75,16 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DetailGalleryCellCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    DetailGalleryCellCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:@"slideGalleryCell" forIndexPath:indexPath];
+    
+    [self.view setNeedsUpdateConstraints];
+    [self.view setNeedsLayout];
     
     Photo *gallery = [self.detailPlaceDataController photoAtIndex:indexPath.row];
-    
     cell.imageView.image = gallery.photo;
-    
+    NSLog(@"%@", cell);
     NSLog(@"%@", gallery.photo);
+    NSLog(@"%@", cell.imageView.image);
     
     
     
@@ -93,6 +99,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 
