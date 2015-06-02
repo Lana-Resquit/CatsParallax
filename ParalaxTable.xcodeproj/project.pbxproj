@@ -18,6 +18,7 @@
 		00BD1F5C1AC3467C00FA569F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BD1F5A1AC3467C00FA569F /* LaunchScreen.xib */; };
 		00BD1F681AC3467C00FA569F /* ParalaxTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD1F671AC3467C00FA569F /* ParalaxTableTests.m */; };
 		00BD1F731AC3477F00FA569F /* ParallaxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BD1F721AC3477F00FA569F /* ParallaxTableViewCell.m */; };
+		00C6EC411B0DF05100E3E53D /* TextCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C6EC401B0DF05100E3E53D /* TextCalculator.m */; };
 		00C95AB61B061A1900EC4F4C /* DetailGalleryCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C95AB51B061A1900EC4F4C /* DetailGalleryCellCollectionViewCell.m */; };
 		00C95AB91B062F7B00EC4F4C /* DetailPlaceDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C95AB81B062F7B00EC4F4C /* DetailPlaceDataController.m */; };
 		00C95ABC1B06313100EC4F4C /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C95ABB1B06313100EC4F4C /* Photo.m */; };
@@ -67,6 +68,8 @@
 		00BD1F671AC3467C00FA569F /* ParalaxTableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParalaxTableTests.m; sourceTree = "<group>"; };
 		00BD1F711AC3477F00FA569F /* ParallaxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxTableViewCell.h; sourceTree = "<group>"; };
 		00BD1F721AC3477F00FA569F /* ParallaxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxTableViewCell.m; sourceTree = "<group>"; };
+		00C6EC3F1B0DF05100E3E53D /* TextCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCalculator.h; sourceTree = "<group>"; };
+		00C6EC401B0DF05100E3E53D /* TextCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCalculator.m; sourceTree = "<group>"; };
 		00C95AB41B061A1900EC4F4C /* DetailGalleryCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGalleryCellCollectionViewCell.h; sourceTree = "<group>"; };
 		00C95AB51B061A1900EC4F4C /* DetailGalleryCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailGalleryCellCollectionViewCell.m; sourceTree = "<group>"; };
 		00C95AB71B062F7B00EC4F4C /* DetailPlaceDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPlaceDataController.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				00C95ABB1B06313100EC4F4C /* Photo.m */,
 				00B932E41ACB141E00A57903 /* UIImage.h */,
 				00B932E51ACB141E00A57903 /* UIImage.m */,
+				00C6EC3F1B0DF05100E3E53D /* TextCalculator.h */,
+				00C6EC401B0DF05100E3E53D /* TextCalculator.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				00BD1F4E1AC3467C00FA569F /* main.m in Sources */,
 				00C95ABC1B06313100EC4F4C /* Photo.m in Sources */,
 				00A928141ACE39A700C8DBBD /* DetailViewController.m in Sources */,
+				00C6EC411B0DF05100E3E53D /* TextCalculator.m in Sources */,
 				00A9281A1ACE3D9B00C8DBBD /* PlacesDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

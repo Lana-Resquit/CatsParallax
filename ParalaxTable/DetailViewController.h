@@ -12,7 +12,7 @@
 @interface DetailViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) Places *detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailSummary;
+
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
