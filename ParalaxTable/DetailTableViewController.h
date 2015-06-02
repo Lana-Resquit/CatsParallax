@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Places.h"
 
-@interface DetailViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface DetailTableViewController : UITableViewController 
 @property (strong, nonatomic) Places *detailItem;
 
 

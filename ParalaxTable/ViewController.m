@@ -11,7 +11,7 @@
 #import "UIImage.h"
 #import "Places.h"
 #import "PlacesDataController.h"
-#import "DetailViewController.h"
+#import "DetailTableViewController.h"
 
 @interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
