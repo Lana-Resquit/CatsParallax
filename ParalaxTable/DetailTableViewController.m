@@ -10,6 +10,7 @@
 #import "DetailTableViewCell.h"
 #import "Photo.h"
 #import "TextCalculator.h"
+#import <MapKit/MapKit.h>
 
 @interface DetailTableViewController ()
 
@@ -27,7 +28,6 @@
 - (void)configureView {
     if (self.detailItem) {
         
-       // self.detailDescription.text = self.detailItem.summary;
         self.navItem.title = self.detailItem.title;
         
     
@@ -37,13 +37,8 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-    [self configureView];
-    
-    
    
+    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,21 +64,44 @@
     return 1;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
-    cell.descriptionLabel.text = @"Хризантема (лат. Chrysanthemum) – травянистые многолетники и однолетники семейства Астровые или Сложноцветные. В переводе с греческого означает «златоцветный», или «цветок-солнце», поскольку многие виды имеют жёлтую окраску соцветий. По данным сайта GRIN этот род насчитывает в природе 29 видов, распространенных в северной и умеренной зонах, по большей части в Азии. Археологи утверждают, что более 2500 лет назад хризантему уже культивировали древние китайцы, употреблявшие ее лепестки в пищу, а в трактате «Весна и осень» она была упомянута самим Конфуцием! Затем культивированием цветка занялись и японцы, боготворившие этот цветок настолько, что исключительно члены императорской семьи имели право носить одежду с изображением хризантемы. В Европе хризантема появилась в восемнадцатом веке, но интенсивно культивировать ее начали только в девятнадцатом.";
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 39.281516;
+    zoomLocation.longitude = -76.580806;
     
-    tableView.rowHeight = cell.descriptionLabel.frame.size.height + cell.collectionView.frame.size.height ;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*1609.344, 0.5*1609.344);
     
-    NSLog(@"%f",cell.descriptionLabel.frame.size.width);
-    NSLog(@"%f",cell.descriptionLabel.frame.size.height);
+    [cell.mapView setRegion:viewRegion animated:YES];
+    
+    NSString *text = @"Самый популярный и известный вид герберы — Gerbera jamesonii Bolus ex Hook.f., гербера Джеймсона. Именно с её открытия началось введение в культуру этого замечательного цветка. В конце 19 века шотландский ученый Роберт Джеймсон обратил внимание и описал один из видов герберы, произрастающий в Трансваале, области в Южной Африке, после чего в некоторых англоязычных странах гербера стала называться «трансваальская ромашка» (transvaal daisy). Именно этот вид стал родоначальником всех современных сортов гербер. Стараниями селекционеров путем скрещивания герберы Джеймсона и герберы зеленолистной (G.Viridifolia) создано более тысячи разновидностей и сортов гибридных гербер разнообразной расцветки и размера, с простыми и махровыми соцветиями. Широко используются, особенно в комнатном цветоводстве, различные садовые формы и сорта герберы Джемсона.Самый популярный и известный вид герберы — Gerbera jamesonii Bolus ex Hook.f., гербера Джеймсона. Именно с её открытия началось введение в культуру этого замечательного цветка. В конце 19 века шотландский ученый Роберт Джеймсон обратил внимание и описал один из видов герберы, произрастающий в Трансваале, области в Южной Африке, после чего в некоторых англоязычных странах гербера стала называться «трансваальская ромашка» (transvaal daisy). Именно этот вид стал родоначальником всех современных сортов гербер. Стараниями селекционеров путем скрещивания герберы Джеймсона и герберы зеленолистной (G.Viridifolia) создано более тысячи разновидностей и сортов гибридных гербер разнообразной расцветки и размера, с простыми и махровыми соцветиями. Широко используются, особенно в комнатном цветоводстве, различные садовые формы и сорта герберы Джемсона.";
+    
+    CGRect r = [text boundingRectWithSize:CGSizeMake(200, 0)
+                                  options:NSStringDrawingUsesLineFragmentOrigin
+                               attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Times New Roman" size:17.0]}
+                                  context:nil];
+    
+//    [cell.collectionView setBackgroundColor:[UIColor blueColor]];
+//    [tableView setBackgroundColor:[UIColor redColor]];
+//    [cell setBackgroundColor:[UIColor greenColor]];
+    
+   self.tableView.rowHeight = r.size.height + cell.collectionView.frame.size.height;
+    
+    
+    cell.descriptionLabel.text = self.detailItem.summary;
+    
+    
+    NSLog(@"%f",r.size.height);
     NSLog(@"%f",cell.collectionView.frame.size.height);
+    NSLog(@"%f",tableView.rowHeight);
     
     
     return cell;
 }
+
 
 
 
