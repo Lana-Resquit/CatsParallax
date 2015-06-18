@@ -12,6 +12,8 @@
 #import "TextCalculator.h"
 #import <MapKit/MapKit.h>
 
+#define METERS_AROUND_THE_LOCATION 800
+
 @interface DetailTableViewController ()
 
 
@@ -69,17 +71,21 @@
     
     DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell" forIndexPath:indexPath];
     
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 39.281516;
-    zoomLocation.longitude = -76.580806;
+   // NSLog(@"%f",self.detailItem.location.coordinate.longitude);
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*1609.344, 0.5*1609.344);
     
-    [cell.mapView setRegion:viewRegion animated:YES];
+    MKCoordinateRegion adjustedRegion = [cell.mapView regionThatFits:MKCoordinateRegionMakeWithDistance(self.detailItem.location, METERS_AROUND_THE_LOCATION, METERS_AROUND_THE_LOCATION)];
+    [cell.mapView setRegion:adjustedRegion animated:YES];
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = self.detailItem.location;
+    point.title = self.detailItem.title;
     
-    NSString *text = @"Самый популярный и известный вид герберы — Gerbera jamesonii Bolus ex Hook.f., гербера Джеймсона. Именно с её открытия началось введение в культуру этого замечательного цветка. В конце 19 века шотландский ученый Роберт Джеймсон обратил внимание и описал один из видов герберы, произрастающий в Трансваале, области в Южной Африке, после чего в некоторых англоязычных странах гербера стала называться «трансваальская ромашка» (transvaal daisy). Именно этот вид стал родоначальником всех современных сортов гербер. Стараниями селекционеров путем скрещивания герберы Джеймсона и герберы зеленолистной (G.Viridifolia) создано более тысячи разновидностей и сортов гибридных гербер разнообразной расцветки и размера, с простыми и махровыми соцветиями. Широко используются, особенно в комнатном цветоводстве, различные садовые формы и сорта герберы Джемсона.Самый популярный и известный вид герберы — Gerbera jamesonii Bolus ex Hook.f., гербера Джеймсона. Именно с её открытия началось введение в культуру этого замечательного цветка. В конце 19 века шотландский ученый Роберт Джеймсон обратил внимание и описал один из видов герберы, произрастающий в Трансваале, области в Южной Африке, после чего в некоторых англоязычных странах гербера стала называться «трансваальская ромашка» (transvaal daisy). Именно этот вид стал родоначальником всех современных сортов гербер. Стараниями селекционеров путем скрещивания герберы Джеймсона и герберы зеленолистной (G.Viridifolia) создано более тысячи разновидностей и сортов гибридных гербер разнообразной расцветки и размера, с простыми и махровыми соцветиями. Широко используются, особенно в комнатном цветоводстве, различные садовые формы и сорта герберы Джемсона.";
+    [cell.mapView addAnnotation:point];
     
-    CGRect r = [text boundingRectWithSize:CGSizeMake(200, 0)
+    
+   // NSString *text = @"Самый ";//популярный и известный вид герберы — Gerbera jamesonii Bolus ex Hook.f., гербера Джеймсона. Именно с её открытия началось введение в культуру этого замечательного цветка. В конце 19 века шотландский ученый Роберт Джеймсон обратил внимание и описал один из видов герберы, произрастающий в Трансваале, области в Южной Африке, после чего в некоторых англоязычных странах гербера стала называться «трансваальская ромашка» (transvaal daisy). Именно этот вид стал родоначальником всех современных сортов гербер. Стараниями селекционеров путем скрещивания герберы Джеймсона и герберы зеленолистной (G.Viridifolia) создано более тысячи разновидностей и сортов гибридных гербер разнообразной расцветки и размера, с простыми и махровыми соцветиями. Широко используются, особенно в комнатном цветоводстве, различные садовые формы и сорта герберы Джемсона.Самый популярный и известный вид герберы — Gerbera jamesonii Bolus ex Hook.f., гербера Джеймсона. Именно с её открытия началось введение в культуру этого замечательного цветка. В конце 19 века шотландский ученый Роберт Джеймсон обратил внимание и описал один из видов герберы, произрастающий в Трансваале, области в Южной Африке, после чего в некоторых англоязычных странах гербера стала называться «трансваальская ромашка» (transvaal daisy). Именно этот вид стал родоначальником всех современных сортов гербер. Стараниями селекционеров путем скрещивания герберы Джеймсона и герберы зеленолистной (G.Viridifolia) создано более тысячи разновидностей и сортов гибридных гербер разнообразной расцветки и размера, с простыми и махровыми соцветиями. Широко используются, особенно в комнатном цветоводстве, различные садовые формы и сорта герберы Джемсона.";
+    
+    CGRect r = [self.detailItem.summary boundingRectWithSize:CGSizeMake(200, 0)
                                   options:NSStringDrawingUsesLineFragmentOrigin
                                attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Times New Roman" size:17.0]}
                                   context:nil];
@@ -88,7 +94,7 @@
 //    [tableView setBackgroundColor:[UIColor redColor]];
 //    [cell setBackgroundColor:[UIColor greenColor]];
     
-   self.tableView.rowHeight = r.size.height + cell.collectionView.frame.size.height;
+    self.tableView.rowHeight = r.size.height + cell.collectionView.frame.size.height;
     
     
     cell.descriptionLabel.text = self.detailItem.summary;

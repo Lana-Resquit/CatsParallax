@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *tablePhotos;
 @property (nonatomic,strong) NSArray *tableLabels;
 @property (nonatomic,strong) NSArray *tableSummary;
+@property (nonatomic, strong) NSArray *placesLocation;
 
 -(void)initializeDefaultPlace;
 
@@ -64,8 +65,11 @@
                           @"Многолетнее красивоцветущее травянистое растение семейства сложноцветных или астровых (Asteraceae). В открытом грунте произрастает только в районах с очень теплым климатом, поэтому используется в первую очередь как оранжерейная (на срезку) или комнатная культура.",
                           @"Значение цветка варьируется и от цвета, так красные тюльпаны могут символизировать объяснение в любви (поверь мне), в то время как белые олицетворяют признание вины и желание получить прощение. Многоцветные же  тюльпаны сообщают девушке о том, что у нее прекрасные глаза. Также тюльпан может означать собой богатство и свидетельствовать о любви и взаимности чувств!",
                           @"Подснежник — многолетне луковичное растение. Луковица округлая, до 3 см в диаметре. Листья немногочисленные, узкие, плоские, линейные или ланцетные, блестящие темно-зеленого или серовато-зеленого цвета, шириной 1 см. Из луковицы вырастает одиночный цветок на прямой цветоножке. Листья появляются одновременно с цветками. Цветки поникающие, колокольчатой формы, белые с зелеными пятнышками на краю лепестка."];
+    
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(37.766997, -122.422032);
+    
     for (int i = 0; i<9; i++) {
-        [self addPlaceWithTitle:[self.tableLabels objectAtIndex:i] summary:[self.tableSummary objectAtIndex:i] andPhoto:[self.tablePhotos objectAtIndex:i]];
+        [self addPlaceWithTitle:[self.tableLabels objectAtIndex:i] summary:[self.tableSummary objectAtIndex:i] photo:[self.tablePhotos objectAtIndex:i] andLocation:coord];
      }
 }
 
@@ -78,8 +82,8 @@
     return [self.placesList objectAtIndex:index];
 }
 
--(void)addPlaceWithTitle:(NSString *)title summary:(NSString *)summary andPhoto:(UIImage *)photo {
-    Places *newPlace = [[Places alloc]initWithTitle:title summary:summary andPhoto:photo];
+-(void)addPlaceWithTitle:(NSString *)title summary:(NSString *)summary photo:(UIImage *)photo andLocation:(CLLocationCoordinate2D)location {
+    Places *newPlace = [[Places alloc]initWithTitle:title summary:summary photo:photo andLocation:location];
     [self.placesList addObject:newPlace];
     
 }
