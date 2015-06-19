@@ -108,41 +108,4 @@
     return cell;
 }
 
-#pragma mark - AddNewPlaceViewControllerDelegate
-
--(void)addNewPlaceTableViewControllerDidCancel:(AddNewPlaceTableViewController *)controller {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)addNewPlaceTableViewControllerDidSave:(AddNewPlaceTableViewController *)controller {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AddPlace"]) {
-        
-        UINavigationController *navigationController = segue.destinationViewController;
-        AddNewPlaceTableViewController *addNewPlaceTableViewController = [[navigationController viewControllers]objectAtIndex:0];
-        addNewPlaceTableViewController.delegate = self;
-    }
-}
-
-- (void)addNewPlaceTableViewController:
-(AddNewPlaceTableViewController *)controller
-                       didAddPlace:(Places *)place
-{
-    [self.places addObject:place];
-    NSIndexPath *indexPath =
-    [NSIndexPath indexPathForRow:[self.places count] - 1
-                       inSection:0];
-    [self.tableView insertRowsAtIndexPaths:
-     [NSArray arrayWithObject:indexPath]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-
-
-
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddNewPlaceTableViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AddNewPlaceTableViewControllerDelegate>
 
 @end
 

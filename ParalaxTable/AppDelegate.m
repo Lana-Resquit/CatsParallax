@@ -7,16 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "Places.h"
+#import "DetailTableViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+{
+    NSMutableArray *places;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
     return YES;
 }
 

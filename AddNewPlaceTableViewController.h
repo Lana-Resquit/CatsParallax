@@ -20,7 +20,7 @@
 
 @property (nonatomic, weak) id <AddNewPlaceTableViewControllerDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UITextField *namaTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextView *summaryTextView;
 
 

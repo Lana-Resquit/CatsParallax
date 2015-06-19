@@ -38,6 +38,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     
     [self scrollViewDidScroll:nil];
+    [self.tableView reloadData];
     
 }
 
@@ -86,6 +87,30 @@
         [[segue destinationViewController]setDetailItem:place];
         
     }
+    if ([segue.identifier isEqualToString:@"AddPlace"]) {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddNewPlaceTableViewController *addNewPlaceTableViewController = [[navigationController viewControllers]objectAtIndex:0];
+        addNewPlaceTableViewController.delegate = self;
+    }
+}
+
+#pragma mark - AddNewPlaceViewControllerDelegate
+
+-(void)addNewPlaceTableViewControllerDidCancel:(AddNewPlaceTableViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)addNewPlaceTableViewControllerDidSave:(AddNewPlaceTableViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addNewPlaceTableViewController:(AddNewPlaceTableViewController *)controller didAddPlace:(Places *)place
+{
+    [self.placesDataController addPlaceWithTitle:place.title summary:place.summary photo:place.photo andLocation:place.location];
+    NSIndexPath *indexPath =[NSIndexPath indexPathForRow:[self.placesDataController placesCount] - 1 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
