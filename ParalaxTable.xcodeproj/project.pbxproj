@@ -22,6 +22,7 @@
 		00C95AB91B062F7B00EC4F4C /* DetailPlaceDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C95AB81B062F7B00EC4F4C /* DetailPlaceDataController.m */; };
 		00C95ABC1B06313100EC4F4C /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C95ABB1B06313100EC4F4C /* Photo.m */; };
 		00C9ACCC1B32BCE800E943E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C9ACCB1B32BCE800E943E9 /* CoreLocation.framework */; };
+		00C9ACCF1B33059100E943E9 /* AddNewPlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C9ACCE1B33059100E943E9 /* AddNewPlaceTableViewController.m */; };
 		00CAB1021B1DAC20005A86CC /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CAB1011B1DAC20005A86CC /* DetailTableViewCell.m */; };
 		00CAB1051B1DAF36005A86CC /* DetailGalleryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CAB1041B1DAF36005A86CC /* DetailGalleryCollectionViewCell.m */; };
 		00D4656B1B300B13001EDD14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D4656A1B300B13001EDD14 /* MapKit.framework */; };
@@ -78,6 +79,8 @@
 		00C95ABA1B06313100EC4F4C /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		00C95ABB1B06313100EC4F4C /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		00C9ACCB1B32BCE800E943E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		00C9ACCD1B33059100E943E9 /* AddNewPlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddNewPlaceTableViewController.h; path = ../AddNewPlaceTableViewController.h; sourceTree = "<group>"; };
+		00C9ACCE1B33059100E943E9 /* AddNewPlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddNewPlaceTableViewController.m; path = ../AddNewPlaceTableViewController.m; sourceTree = "<group>"; };
 		00CAB1001B1DAC20005A86CC /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
 		00CAB1011B1DAC20005A86CC /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
 		00CAB1031B1DAF36005A86CC /* DetailGalleryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailGalleryCollectionViewCell.h; sourceTree = "<group>"; };
@@ -128,14 +131,12 @@
 			children = (
 				00BD1F521AC3467C00FA569F /* ViewController.h */,
 				00BD1F531AC3467C00FA569F /* ViewController.m */,
-				00BD1F711AC3477F00FA569F /* ParallaxTableViewCell.h */,
-				00BD1F721AC3477F00FA569F /* ParallaxTableViewCell.m */,
+				00C9ACD01B3305B800E943E9 /* Main Cell */,
 				00A928121ACE39A700C8DBBD /* DetailTableViewController.h */,
 				00A928131ACE39A700C8DBBD /* DetailTableViewController.m */,
-				00CAB1001B1DAC20005A86CC /* DetailTableViewCell.h */,
-				00CAB1011B1DAC20005A86CC /* DetailTableViewCell.m */,
-				00CAB1031B1DAF36005A86CC /* DetailGalleryCollectionViewCell.h */,
-				00CAB1041B1DAF36005A86CC /* DetailGalleryCollectionViewCell.m */,
+				00C9ACD11B3305C800E943E9 /* Detail Cell */,
+				00C9ACCD1B33059100E943E9 /* AddNewPlaceTableViewController.h */,
+				00C9ACCE1B33059100E943E9 /* AddNewPlaceTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -235,6 +236,34 @@
 				00BD1F661AC3467C00FA569F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00C9ACD01B3305B800E943E9 /* Main Cell */ = {
+			isa = PBXGroup;
+			children = (
+				00BD1F711AC3477F00FA569F /* ParallaxTableViewCell.h */,
+				00BD1F721AC3477F00FA569F /* ParallaxTableViewCell.m */,
+			);
+			name = "Main Cell";
+			sourceTree = "<group>";
+		};
+		00C9ACD11B3305C800E943E9 /* Detail Cell */ = {
+			isa = PBXGroup;
+			children = (
+				00CAB1001B1DAC20005A86CC /* DetailTableViewCell.h */,
+				00CAB1011B1DAC20005A86CC /* DetailTableViewCell.m */,
+				00C9ACD21B3305F300E943E9 /* Collection Cell */,
+			);
+			name = "Detail Cell";
+			sourceTree = "<group>";
+		};
+		00C9ACD21B3305F300E943E9 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				00CAB1041B1DAF36005A86CC /* DetailGalleryCollectionViewCell.m */,
+				00CAB1031B1DAF36005A86CC /* DetailGalleryCollectionViewCell.h */,
+			);
+			name = "Collection Cell";
 			sourceTree = "<group>";
 		};
 		5FEA629E662C973F5E71CDB0 /* Frameworks */ = {
@@ -416,6 +445,7 @@
 				00CAB1051B1DAF36005A86CC /* DetailGalleryCollectionViewCell.m in Sources */,
 				00A928141ACE39A700C8DBBD /* DetailTableViewController.m in Sources */,
 				00C6EC411B0DF05100E3E53D /* TextCalculator.m in Sources */,
+				00C9ACCF1B33059100E943E9 /* AddNewPlaceTableViewController.m in Sources */,
 				00A9281A1ACE3D9B00C8DBBD /* PlacesDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

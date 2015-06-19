@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Places.h"
+#import "AddNewPlaceTableViewController.h"
 
-@interface DetailTableViewController : UITableViewController <MKMapViewDelegate>
+@interface DetailTableViewController : UITableViewController <MKMapViewDelegate, AddNewPlaceTableViewControllerDelegate>
 
 @property (strong, nonatomic) Places *detailItem;
+@property (nonatomic, strong) NSMutableArray *places;
 
-@property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 
 @end
