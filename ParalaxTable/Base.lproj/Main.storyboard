@@ -37,6 +37,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="240" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-Aj-I3u">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="z4s-WC-gTX">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="vXZ-lx-hvc" id="aau-bo-u5L"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParallaxCell" rowHeight="263" id="V5q-9g-rIl" customClass="ParallaxTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -288,10 +296,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchDisplayController" destination="zlu-bY-0Qg" id="nC8-C3-w65"/>
                         <outlet property="tableView" destination="BXH-Aj-I3u" id="DXT-aO-ChJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="zlu-bY-0Qg">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="ef7-Wk-78x"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="W0N-Dc-4nX"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="4e9-oS-VUz"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="qvz-lx-TPv"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="139.5" y="93.75"/>
         </scene>
@@ -302,7 +319,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="45R-El-0ok">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Название" id="tj1-DL-p74">
                                 <cells>
@@ -422,7 +439,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLX-Tg-Nhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816.5" y="-606"/>
+            <point key="canvasLocation" x="1604" y="-849"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pom-uO-RoW">
@@ -438,7 +455,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfs-TJ-B51" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886.5" y="-606"/>
+            <point key="canvasLocation" x="886" y="-849"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="IYV-KB-8wz">

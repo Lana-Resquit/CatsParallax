@@ -11,5 +11,7 @@
 
 @interface ViewController : UIViewController <AddNewPlaceTableViewControllerDelegate>
 
+@property (nonatomic, strong) NSMutableArray *displayItems;
+
 @end
 

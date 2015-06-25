@@ -13,7 +13,7 @@
 
 @interface AddNewPlaceTableViewController ()<UITextViewDelegate>
 
-@property (nonatomic, strong) PlacesDataController *placesDataController;
+//@property (nonatomic, strong) PlacesDataController *placesDataController;
 
 @end
 
@@ -24,8 +24,8 @@
     [self.delegate addNewPlaceTableViewControllerDidCancel:self];
 }
 
--(IBAction)done:(id)sender
-{
+-(IBAction)done:(id)sender {
+    
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(37.766997, -122.422032);
     
     Places *place = [[Places alloc]init];
@@ -43,7 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.placesDataController = [[PlacesDataController alloc]init];
+//    self.placesDataController = [[PlacesDataController alloc]init];
     
     self.summaryTextView.delegate = self;
     self.summaryTextView.text = @"Введите описание";
@@ -61,8 +61,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    
     if ((self = [super initWithCoder:aDecoder])) {
         NSLog(@"init PlayerDetailsViewController");
     }
@@ -76,8 +76,8 @@
 
 #pragma mark - Table view data source
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (indexPath.section == 0) {
         [self.nameTextField becomeFirstResponder];
     }

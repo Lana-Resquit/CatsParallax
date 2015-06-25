@@ -11,6 +11,8 @@
 
 @interface PlacesDataController : NSObject
 
+@property (nonatomic, readonly) NSMutableArray *placesList;
+
 -(NSUInteger)placesCount;
 -(Places *)placeAtIndex:(NSUInteger)index;
 -(void) addPlaceWithTitle:(NSString *)title summary:(NSString *)summary photo:(UIImage *)photo andLocation:(CLLocationCoordinate2D)location;

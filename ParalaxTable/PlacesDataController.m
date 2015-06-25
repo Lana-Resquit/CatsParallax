@@ -11,11 +11,11 @@
 
 @interface PlacesDataController ()
 
-@property (nonatomic, readonly) NSMutableArray *placesList;
 @property (nonatomic, strong) NSArray *tablePhotos;
 @property (nonatomic,strong) NSArray *tableLabels;
 @property (nonatomic,strong) NSArray *tableSummary;
 @property (nonatomic, strong) NSArray *placesLocation;
+
 
 -(void)initializeDefaultPlace;
 
