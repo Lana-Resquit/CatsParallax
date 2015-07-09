@@ -474,7 +474,7 @@
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KGa-rd-EBe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="174" id="6FE-Mn-4lG"/>
+                                                <constraint firstAttribute="height" constant="174" id="28w-3J-M65"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WDo-3F-b7a">
                                                 <size key="itemSize" width="400" height="171"/>
@@ -531,12 +531,12 @@
                                             </cells>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="6FE-Mn-4lG"/>
+                                                    <exclude reference="28w-3J-M65"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
-                                                    <include reference="6FE-Mn-4lG"/>
+                                                    <include reference="28w-3J-M65"/>
                                                 </mask>
                                             </variation>
                                         </collectionView>
@@ -549,39 +549,31 @@
                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TST-NE-yVp">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="200" id="Q7l-E8-E1K"/>
+                                                <constraint firstAttribute="height" constant="200" id="zgG-NO-Vd3"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Q7l-E8-E1K"/>
+                                                    <exclude reference="zgG-NO-Vd3"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
-                                                    <include reference="Q7l-E8-E1K"/>
+                                                    <include reference="zgG-NO-Vd3"/>
                                                 </mask>
                                             </variation>
                                         </mapView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="KGa-rd-EBe" firstAttribute="trailing" secondItem="zN7-e1-T2g" secondAttribute="trailing" id="76e-6Z-DW8">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                                        </constraint>
-                                        <constraint firstItem="TST-NE-yVp" firstAttribute="trailing" secondItem="zN7-e1-T2g" secondAttribute="trailing" id="9GK-Vj-doI">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                                        </constraint>
-                                        <constraint firstAttribute="trailing" secondItem="KGa-rd-EBe" secondAttribute="trailing" id="9xB-Yi-kKO"/>
-                                        <constraint firstItem="zN7-e1-T2g" firstAttribute="leading" secondItem="TST-NE-yVp" secondAttribute="leading" id="P5n-E3-EBN">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                                        </constraint>
-                                        <constraint firstItem="KGa-rd-EBe" firstAttribute="leading" secondItem="I4F-dH-7E5" secondAttribute="leading" id="VDo-nL-RHf"/>
-                                        <constraint firstItem="zN7-e1-T2g" firstAttribute="top" secondItem="KGa-rd-EBe" secondAttribute="bottom" constant="8" symbolic="YES" id="Vww-c4-pwC"/>
-                                        <constraint firstAttribute="bottom" secondItem="TST-NE-yVp" secondAttribute="bottom" id="ed3-BB-iHF"/>
-                                        <constraint firstItem="TST-NE-yVp" firstAttribute="top" secondItem="zN7-e1-T2g" secondAttribute="bottom" constant="8" symbolic="YES" id="hwz-q4-6cP"/>
-                                        <constraint firstItem="zN7-e1-T2g" firstAttribute="leading" secondItem="KGa-rd-EBe" secondAttribute="leading" id="lv7-S0-sna">
-                                            <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                                        </constraint>
-                                        <constraint firstItem="KGa-rd-EBe" firstAttribute="top" secondItem="I4F-dH-7E5" secondAttribute="top" id="rnq-NP-Knb"/>
+                                        <constraint firstItem="zN7-e1-T2g" firstAttribute="leading" secondItem="I4F-dH-7E5" secondAttribute="leadingMargin" constant="-14" id="4ce-LM-n4A"/>
+                                        <constraint firstItem="TST-NE-yVp" firstAttribute="leading" secondItem="I4F-dH-7E5" secondAttribute="leading" id="Cg2-1j-7oQ"/>
+                                        <constraint firstItem="zN7-e1-T2g" firstAttribute="top" secondItem="KGa-rd-EBe" secondAttribute="bottom" constant="8" symbolic="YES" id="DGT-W6-HJA"/>
+                                        <constraint firstAttribute="trailing" secondItem="TST-NE-yVp" secondAttribute="trailing" id="MaP-xc-xLy"/>
+                                        <constraint firstItem="TST-NE-yVp" firstAttribute="trailing" secondItem="KGa-rd-EBe" secondAttribute="trailing" id="NEp-Xu-WC8"/>
+                                        <constraint firstItem="KGa-rd-EBe" firstAttribute="leading" secondItem="TST-NE-yVp" secondAttribute="leading" id="VL7-MS-YlA"/>
+                                        <constraint firstItem="zN7-e1-T2g" firstAttribute="centerX" secondItem="KGa-rd-EBe" secondAttribute="centerX" id="Z3b-Nm-9ny"/>
+                                        <constraint firstAttribute="bottom" secondItem="TST-NE-yVp" secondAttribute="bottom" id="Zt1-Ez-IqD"/>
+                                        <constraint firstItem="KGa-rd-EBe" firstAttribute="top" secondItem="I4F-dH-7E5" secondAttribute="top" id="sWK-mU-ftr"/>
+                                        <constraint firstItem="TST-NE-yVp" firstAttribute="top" secondItem="zN7-e1-T2g" secondAttribute="bottom" constant="8" symbolic="YES" id="xKI-n3-Yve"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
@@ -590,16 +582,16 @@
                                             <exclude reference="TST-NE-yVp"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="P5n-E3-EBN"/>
-                                            <exclude reference="Vww-c4-pwC"/>
-                                            <exclude reference="lv7-S0-sna"/>
-                                            <exclude reference="9GK-Vj-doI"/>
-                                            <exclude reference="ed3-BB-iHF"/>
-                                            <exclude reference="hwz-q4-6cP"/>
-                                            <exclude reference="76e-6Z-DW8"/>
-                                            <exclude reference="9xB-Yi-kKO"/>
-                                            <exclude reference="VDo-nL-RHf"/>
-                                            <exclude reference="rnq-NP-Knb"/>
+                                            <exclude reference="VL7-MS-YlA"/>
+                                            <exclude reference="sWK-mU-ftr"/>
+                                            <exclude reference="4ce-LM-n4A"/>
+                                            <exclude reference="DGT-W6-HJA"/>
+                                            <exclude reference="Z3b-Nm-9ny"/>
+                                            <exclude reference="Cg2-1j-7oQ"/>
+                                            <exclude reference="MaP-xc-xLy"/>
+                                            <exclude reference="NEp-Xu-WC8"/>
+                                            <exclude reference="Zt1-Ez-IqD"/>
+                                            <exclude reference="xKI-n3-Yve"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -609,16 +601,16 @@
                                             <include reference="TST-NE-yVp"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="P5n-E3-EBN"/>
-                                            <include reference="Vww-c4-pwC"/>
-                                            <include reference="lv7-S0-sna"/>
-                                            <include reference="9GK-Vj-doI"/>
-                                            <include reference="ed3-BB-iHF"/>
-                                            <include reference="hwz-q4-6cP"/>
-                                            <include reference="76e-6Z-DW8"/>
-                                            <include reference="9xB-Yi-kKO"/>
-                                            <include reference="VDo-nL-RHf"/>
-                                            <include reference="rnq-NP-Knb"/>
+                                            <include reference="VL7-MS-YlA"/>
+                                            <include reference="sWK-mU-ftr"/>
+                                            <include reference="4ce-LM-n4A"/>
+                                            <include reference="DGT-W6-HJA"/>
+                                            <include reference="Z3b-Nm-9ny"/>
+                                            <include reference="Cg2-1j-7oQ"/>
+                                            <include reference="MaP-xc-xLy"/>
+                                            <include reference="NEp-Xu-WC8"/>
+                                            <include reference="Zt1-Ez-IqD"/>
+                                            <include reference="xKI-n3-Yve"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -634,7 +626,9 @@
                             <outlet property="delegate" destination="cvY-th-Ibg" id="XVg-i9-w6w"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Sh4-kU-fot"/>
                     <connections>
+                        <outlet property="navItem" destination="Sh4-kU-fot" id="ZKd-VL-1pO"/>
                         <outlet property="tableView" destination="Hdn-Uf-6ew" id="uS3-kM-089"/>
                     </connections>
                 </tableViewController>
